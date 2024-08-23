@@ -3,8 +3,4 @@ const arrayDepth = (array) => {
     return 1 + Math.max(...array.map(arrayDepth))
 }
 
-const flattenArray = (array) => {
-    return array.reduce((accumulator, value) => {
-        return accumulator.concat(Array.isArray(value) ? flattenArray(value) : value)
-    }, [])
-}
+const flattenedArray = (array) => array.flat(arrayDepth(array -1 ))
